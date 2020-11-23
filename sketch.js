@@ -17,8 +17,8 @@ var heightedbase;
 var gameState = "onsling";
 
 function preload(){
-  bgimage = loadImage("sprites/bg.png");
-  //changeBg();
+ //bgimage = loadImage("sprites/bg.png");
+  changeBg();
   
 }
 function setup(){
@@ -91,13 +91,13 @@ function mouseReleased(){
 
 async function changeBg(){
   var storeTime = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
-  //console.log(storeTime);
+  console.log(storeTime);
   var JSONTime = storeTime.json();
-  //console.log(JSONTime);
+  console.log(JSONTime);
   var time = JSONTime.datetime;
-  //console.log(time);
+  console.log(time);
   var hour = time.slice(11 ,13);
-  //console.log(hour);
+  console.log(hour);
   if (hour >= 06 && hour <= 19){
     bg = "sprites/bg.png";
   }
